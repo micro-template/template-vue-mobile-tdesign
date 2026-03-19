@@ -52,8 +52,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue,html,css,less}": [
-      "prettier --write",
-      "stylelint --fix"
+      "prettier --write"
     ]
   },
   "packageManager": "pnpm@10.30.3"
