@@ -30,6 +30,7 @@
     "@vitejs/plugin-vue": "^6.0.4",
     "@vitejs/plugin-vue-jsx": "^5.1.4",
     "@vue/tsconfig": "^0.8.1",
+    "eslint": "^10.0.3",
     "husky": "^9.1.7",
     "less": "^4.6.4",
     "lint-staged": "^16.4.0",
