@@ -6,7 +6,7 @@ const DEFAULT = [
   javascript,
   typescript,
   stylistic,
-  ...vue,
+  vue,
   css
 ];
 
