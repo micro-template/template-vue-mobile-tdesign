@@ -20,6 +20,41 @@ const configs = [
       sourceType: "module",
       parser: tsParser
     },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          project: [
+            "tsconfig.app.json",
+            "tsconfig.node.json",
+            "tsconfig.json"
+          ],
+          alwaysTryTypes: true,
+          extensions: [
+            ".ts",
+            ".tsx",
+            ".d.ts",
+            ".vue",
+            ".js",
+            ".jsx"
+          ]
+        },
+        alias: {
+          map: [
+            [
+              "@",
+              "./src"
+            ]
+          ],
+          extensions: [
+            ".js",
+            ".ts",
+            ".vue",
+            ".jsx",
+            ".tsx"
+          ]
+        }
+      }
+    },
     rules: {
 
       // 防止重复 import

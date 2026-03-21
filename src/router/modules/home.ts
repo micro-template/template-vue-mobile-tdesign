@@ -1,4 +1,4 @@
-import Home from "../../views/HomeView.vue";
+import Home from "@/views/HomeView.vue";
 
 export default {
   path: "/",
