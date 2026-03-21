@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
-  Navbar
+  Navbar,
+  NavbarProps
 } from "tdesign-mobile-vue";
 import {
   computed,
@@ -10,11 +11,16 @@ import {
   useRoute
 } from "vue-router";
 import {
-  isObject
+  isObject,
+  find
 } from "lodash-es";
 import {
   IRouteConfig
 } from "@/router/types";
+
+import {
+  useFooter
+} from "../../hooks";
 
 const route = useRoute();
 
@@ -22,21 +28,39 @@ const meta: ComputedRef<IRouteConfig["meta"]> = computed(() => route.meta);
 
 const isTitleHidden = computed(() => meta.value?.hidden?.title ?? true);
 
-const options = computed(() => {
-  if(isObject(meta.value?.title)) {
-    return meta.value?.title;
+const footer = useFooter();
+
+const options: ComputedRef<NavbarProps> = computed(() => {
+  const title = meta.value?.title;
+
+  const leftArrow = !find(footer.value, {
+    path: route.path
+  });
+
+  let obj: NavbarProps;
+
+  if (isObject(title) && !("component" in title)) {
+
+    obj = {
+      leftArrow,
+      ...title
+    };
+  } else {
+
+    obj = {
+      title: String(title ?? ""),
+      leftArrow
+    };
   }
 
-  return {
-    title: String(meta.value?.title ?? "")
-  };
+  return obj;
 });
 
 </script>
 <template>
   <Navbar v-if="isTitleHidden"
-          :fixed="false"
-          :left-arrow="false"
-          :title="String(options?.title ?? '')"
+          :fixed="options.fixed ?? false"
+          :left-arrow="options.leftArrow ?? false"
+          :title="String(options.title ?? '')"
   />
 </template>
