@@ -8,7 +8,8 @@ import {
   ComputedRef
 } from "vue";
 import {
-  useRoute
+  useRoute,
+  useRouter
 } from "vue-router";
 import {
   isObject,
@@ -63,11 +64,18 @@ const options: ComputedRef<NavbarProps> = computed(() => {
   return obj;
 });
 
+const router = useRouter();
+
+const handleLeftClick = () => {
+  router.back();
+};
+
 </script>
 <template>
   <Navbar v-if="isTitleHidden"
           :fixed="options.fixed ?? false"
           :left-arrow="options.leftArrow ?? false"
           :title="String(options.title ?? '')"
+          @left-click="handleLeftClick"
   />
 </template>
