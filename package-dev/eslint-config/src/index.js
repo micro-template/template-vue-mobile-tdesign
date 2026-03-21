@@ -1,5 +1,5 @@
-import { javascript } from './config/index.js'
+import { javascript, typescript } from './config/index.js'
 
-const DEFAULT = [javascript]
+const DEFAULT = [javascript, typescript]
 
 export default DEFAULT

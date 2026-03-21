@@ -42,7 +42,6 @@
     "source.fixAll.stylelint": "explicit",
     "source.organizeImports": "never"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
   "files.associations": {
     "**/.husky/*": "shellscript",

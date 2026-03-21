@@ -1,13 +1,16 @@
 import js from '@eslint/js'
 import globals from 'globals'
+import pluginUnusedImports from 'eslint-plugin-unused-imports'
+import pluginUnicorn from 'eslint-plugin-unicorn'
+
 export default {
   files: ['**/*.{js,mjs,cjs,vue}'],
   languageOptions: {
     globals: globals.browser,
   },
-  plugins: { js },
-  extends: ['js/recommended'],
+  plugins: { 'unused-imports': pluginUnusedImports, unicorn: pluginUnicorn },
   rules: {
+    ...js.configs.recommended.rules,
     'accessor-pairs': [
       'error',
       {

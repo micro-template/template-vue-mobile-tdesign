@@ -1,4 +1,3 @@
-import ESLint from '@ailearning/eslint-config'
-import { defineConfig } from 'eslint/config'
+import ESLint from "@ailearning/eslint-config";
 
-export default ESLint
+export default ESLint;
