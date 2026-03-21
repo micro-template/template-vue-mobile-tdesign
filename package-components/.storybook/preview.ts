@@ -7,6 +7,9 @@ import {
 
 const preview: Preview = {
   parameters: {
+    options: {
+      panelPosition: "right"
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
