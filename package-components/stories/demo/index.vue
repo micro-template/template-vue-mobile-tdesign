@@ -1,6 +1,13 @@
+<script setup lang="ts">
+import {
+  Button
+} from "tdesign-mobile-vue";
+</script>
 <template>
   <div>
-    demo
+    <Button>
+      按钮
+    </Button>
   </div>
 </template>
 <style scoped>

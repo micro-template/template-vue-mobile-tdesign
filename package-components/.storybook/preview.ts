@@ -5,6 +5,9 @@ import {
   INITIAL_VIEWPORTS
 } from "storybook/viewport";
 
+// 引入组件库的少量全局样式变量
+import "tdesign-mobile-vue/es/style/index.css";
+
 const preview: Preview = {
   parameters: {
     options: {
