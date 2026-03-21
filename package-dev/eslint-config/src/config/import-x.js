@@ -30,7 +30,7 @@ const configs = [
       "import-x/no-cycle": "error",
       "import-x/first": "error",
       "import-x/newline-after-import": "error",
-      "import-x/no-relative-parent-imports": "warn",
+      "import-x/no-relative-parent-imports": "off",
       "import-x/export": "error",
 
       // 🔥 强烈推荐

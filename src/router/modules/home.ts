@@ -6,6 +6,9 @@ export default [
   {
     path: "/",
     name: "home",
-    component: () => import("@/views/HomeView.vue")
+    component: () => import("@/views/home/index.vue"),
+    meta: {
+      title: "首页"
+    }
   }
-] satisfies IRouteConfig;
+] satisfies IRouteConfig[];
