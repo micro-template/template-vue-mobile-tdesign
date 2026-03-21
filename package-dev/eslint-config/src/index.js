@@ -1,11 +1,12 @@
 import {
-  javascript, typescript, stylistic
+  javascript, typescript, stylistic, vue
 } from "./config/index.js";
 
 const DEFAULT = [
   javascript,
   typescript,
-  stylistic
+  stylistic,
+  ...vue
 ];
 
 export default DEFAULT;
