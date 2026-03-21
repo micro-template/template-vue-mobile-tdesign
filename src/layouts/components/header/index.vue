@@ -23,6 +23,6 @@ const meta: ComputedRef<IRouteConfig["meta"]> = computed(() => route.meta);
   <Navbar v-if="meta?.hidden?.title"
           :fixed="false"
           :left-arrow="false"
-          :title="meta?.title as unknown as string"
+          :title="String(meta?.title ?? '')"
   />
 </template>

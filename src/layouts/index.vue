@@ -3,10 +3,6 @@ import {
   RouterView
 } from "vue-router";
 
-import {
-  Icon
-} from "@iconify/vue";
-
 import Header from "@/layouts/components/header/index.vue";
 import Footer from "@/layouts/components/footer/index.vue";
 
@@ -18,7 +14,6 @@ import Footer from "@/layouts/components/footer/index.vue";
     </header>
     <section>
       <RouterView />
-      <Icon icon="mdi-light:home" />
     </section>
     <footer>
       <Footer />

@@ -4,33 +4,63 @@ import {
   TabBarItem
 } from "tdesign-mobile-vue";
 import {
-  ref
+  ref,
+  ComputedRef,
+  computed
 } from "vue";
+import router from "@/router";
+import {
+  IFooterMeta,
+  IRouteConfig
+} from "@/router/types";
+import type {
+  RouteRecordRaw
+} from "vue-router";
+import {
+  filter,
+  get,
+  isObject,
+  isString,
+  trim
+} from "lodash-es";
+import {
+  Icon
+} from "@iconify/vue";
 
-const value = ref("label_1");
+const _footer: ComputedRef<IRouteConfig[]> = computed(() => filter(router.options.routes, (item: RouteRecordRaw) => {
+  const fUnknown = get(item, "meta.footer") as unknown;
 
-const list = ref([
-  {
-    value: "label_1",
-    label: "首页",
-    icon: "home"
-  },
-  {
-    value: "label_2",
-    label: "应用",
-    icon: "app"
-  },
-  {
-    value: "label_3",
-    label: "聊天",
-    icon: "chat"
-  },
-  {
-    value: "label_4",
-    label: "我的",
-    icon: "user"
+  if (!isObject(fUnknown)) {
+    return false;
   }
-]);
+
+  const f = fUnknown as Partial<IFooterMeta>;
+
+  const hasValue = isString(f.value) && trim(f.value).length > 0;
+
+  const hasIcon = isString(f.icon) && trim(f.icon).length > 0;
+
+  return hasValue || hasIcon;
+}).map((item: RouteRecordRaw) => {
+  const {
+    name: itemName
+  } = item;
+
+  let name = "";
+
+  if (typeof itemName === "string") {
+    name = itemName;
+  } else if (itemName) {
+    name = String(itemName);
+  }
+
+  return {
+    ...(item as object),
+    name
+  } as IRouteConfig;
+}));
+
+const value = ref(_footer.value[0]?.path ?? "");
 </script>
 
 <template>
@@ -39,13 +69,13 @@ const list = ref([
           :fixed="false"
           :split="false"
   >
-    <TabBarItem v-for="item in list"
-                :key="item.value"
-                :value="item.value"
+    <TabBarItem v-for="item in _footer"
+                :key="item.path"
+                :value="item.path"
     >
-      {{ item.label }}
+      {{ item.meta?.footer?.value }}
       <template #icon>
-        111
+        <Icon :icon="item.meta?.footer?.icon ?? ''" />
       </template>
     </TabBarItem>
   </TabBar>

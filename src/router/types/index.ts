@@ -8,6 +8,11 @@ import {
   RouteComponent
 } from "vue-router";
 
+export interface IFooterMeta {
+  value?: string;
+  icon?: string;
+}
+
 export interface IRouteConfig {
   path: string;
   name: string;
@@ -18,9 +23,6 @@ export interface IRouteConfig {
       title?: boolean | NavbarProps;
       footer?: boolean;
     };
-    footer?: {
-      value?: string;
-      icon?: string;
-    };
+    footer?: IFooterMeta;
   };
 }
