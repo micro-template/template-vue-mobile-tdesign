@@ -1,0 +1,161 @@
+import stylistic from "@stylistic/eslint-plugin";
+
+/**
+ * ESLint Stylistic
+ *
+ * https://eslint.style
+ */
+export default {
+  plugins: {
+    "@stylistic": stylistic
+  },
+  rules: {
+    "@stylistic/space-infix-ops": [
+      "error"
+    ],
+    "@stylistic/switch-colon-spacing": [
+      "error",
+      {
+        after: true,
+        before: false
+      }
+    ],
+
+    // 空格
+    "@stylistic/key-spacing": [
+      "error",
+      {
+        beforeColon: false,
+        afterColon: true
+      }
+    ],
+    "@stylistic/space-before-blocks": "error",
+
+    // https://eslint.style/rules/js/object-curly-newline
+    "@stylistic/object-curly-newline": [
+      "error",
+      {
+        ExportDeclaration: {
+          minProperties: 1,
+          multiline: true
+
+          // consistent: true
+        },
+        ImportDeclaration: {
+          minProperties: 1,
+          multiline: true
+        },
+        ObjectExpression: {
+          minProperties: 1,
+          multiline: true
+        },
+        ObjectPattern: {
+          minProperties: 1,
+          multiline: true
+        }
+      }
+    ],
+    "@stylistic/object-property-newline": "error",
+
+    // 缩进配置 - 数组换行需要配合缩进规则
+    /*
+    "@stylistic/indent": [
+      "error",
+      2,
+      {
+        SwitchCase: 1,
+        VariableDeclarator: 1,
+        outerIIFEBody: 1,
+        MemberExpression: 1,
+        FunctionDeclaration: {
+          parameters: 1,
+          body: 1
+        },
+        FunctionExpression: {
+          parameters: 1,
+          body: 1
+        },
+        CallExpression: {
+          arguments: 1
+        },
+        ArrayExpression: 1,
+        ObjectExpression: 1,
+        ImportDeclaration: 1,
+        flatTernaryExpressions: false,
+        ignoreComments: false,
+        ignoredNodes: [
+          "JSXElement",
+          "JSXElement > *",
+          "JSXAttribute",
+          "JSXIdentifier",
+          "JSXNamespacedName",
+          "JSXMemberExpression",
+          "JSXSpreadAttribute",
+          "JSXExpressionContainer",
+          "JSXOpeningElement",
+          "JSXClosingElement",
+          "JSXFragment",
+          "JSXOpeningFragment",
+          "JSXClosingFragment",
+          "JSXText",
+          "JSXEmptyExpression",
+          "JSXSpreadChild"
+        ]
+      }
+    ],
+    */
+
+    // TODO 与 indent 冲突
+    "@stylistic/indent": "off",
+    "@stylistic/member-delimiter-style": [
+      "error",
+      {
+        multiline: {
+          delimiter: "semi",
+          requireLast: true
+        },
+        singleline: {
+          delimiter: "semi",
+          requireLast: false
+        },
+        multilineDetection: "brackets"
+      }
+    ],
+
+    // 数组换行配置
+    "@stylistic/array-bracket-newline": [
+      "error",
+      {
+        multiline: true,
+        minItems: 1
+      }
+    ],
+    "@stylistic/semi": [
+      "error",
+      "always"
+    ], // 强制所有语句以分号结束
+
+    // 从 javascript 中提取过来的
+    "@stylistic/array-element-newline": [
+      "error",
+      {
+        minItems: 1
+      }
+    ],
+
+    // 数组括号间距
+    "@stylistic/array-bracket-spacing": [
+      "error",
+      "always"
+    ],
+
+    // 花括号换行规则 https://eslint.style/rules/brace-style#brace-style
+    "@stylistic/brace-style": [
+      "error",
+      "1tbs",
+      {
+        allowSingleLine: false
+      }
+    ]
+  }
+};
