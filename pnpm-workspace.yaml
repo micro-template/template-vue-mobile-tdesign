@@ -1,3 +1,4 @@
 packages:
   - 'package-request'
   - 'package-dev/**'
+  - 'package-components'
