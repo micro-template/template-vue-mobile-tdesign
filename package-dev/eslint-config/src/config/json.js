@@ -9,9 +9,9 @@ export default [
       json
     },
     language: "json/json",
-    extends: [
-      "json/recommended"
-    ]
+    rules: {
+      ...json.configs.recommended.rules
+    }
   },
   {
     files: [
@@ -21,9 +21,9 @@ export default [
       json
     },
     language: "json/jsonc",
-    extends: [
-      "json/recommended"
-    ]
+    rules: {
+      ...json.configs.recommended.rules
+    }
   },
   {
     files: [
@@ -33,8 +33,8 @@ export default [
       json
     },
     language: "json/json5",
-    extends: [
-      "json/recommended"
-    ]
+    rules: {
+      ...json.configs.recommended.rules
+    }
   }
 ];
