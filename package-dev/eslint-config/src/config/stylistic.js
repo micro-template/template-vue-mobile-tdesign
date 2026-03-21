@@ -51,7 +51,13 @@ export default {
         }
       }
     ],
-    "@stylistic/object-property-newline": "error",
+    "@stylistic/object-property-newline": [
+      "error",
+      {
+        allowAllPropertiesOnSameLine: false
+      }
+
+    ],
 
     // 缩进配置 - 数组换行需要配合缩进规则
     /*

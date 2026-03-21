@@ -32,7 +32,13 @@ const configs = [
             }
           ]
         }
-      ]
+      ],
+
+      // 防止重复 import
+      "import-x/no-duplicates": "error",
+
+      // 禁止无效路径
+      "import-x/no-unresolved": "error"
     }
   }
 ].filter(Boolean);
