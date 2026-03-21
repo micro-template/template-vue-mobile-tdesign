@@ -7,15 +7,22 @@ import {
   Icon
 } from "@iconify/vue";
 
+import Header from "@/layouts/components/header/index.vue";
+import Footer from "@/layouts/components/footer/index.vue";
+
 </script>
 <template>
   <main>
-    <header>头部</header>
-    <content>
+    <header>
+      <Header />
+    </header>
+    <section>
       <RouterView />
       <Icon icon="mdi-light:home" />
-    </content>
-    <footer>底部</footer>
+    </section>
+    <footer>
+      <Footer />
+    </footer>
   </main>
 </template>
 <style scoped>
@@ -25,7 +32,7 @@ main {
   height: 100%;
 }
 
-content {
+section {
   flex: 1;
 }
 </style>
