@@ -1,5 +1,5 @@
 import {
-  javascript, typescript, stylistic, vue, css, json
+  javascript, typescript, stylistic, vue, css, json, importX
 } from "./config/index.js";
 
 const DEFAULT = [
@@ -8,7 +8,8 @@ const DEFAULT = [
   stylistic,
   vue,
   css,
-  ...json
+  ...json,
+  ...importX
 ];
 
 export default DEFAULT;
