@@ -1,4 +1,3 @@
-// postcss.config.js
 import postcssPxtorem from "postcss-pxtorem";
 
 export default {

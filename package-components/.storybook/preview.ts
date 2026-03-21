@@ -29,3 +29,19 @@ const preview: Preview = {
 };
 
 export default preview;
+
+// 👇 就放在这里（和 export default 同级）
+export const decorators = [
+  () => ({
+    template: `
+      <div>
+        <style>
+          html {
+            font-size: 37.5px;
+          }
+        </style>
+        <story />
+      </div>
+    `
+  })
+];
