@@ -1,5 +1,8 @@
 import tseslint from "typescript-eslint";
 
+/**
+ * https://typescript-eslint.nodejs.cn/
+ */
 export default {
 
   // "**/*.vue" 验证 vue 文件中的 ts
