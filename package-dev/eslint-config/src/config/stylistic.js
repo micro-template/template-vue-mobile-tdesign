@@ -35,15 +35,11 @@ export default {
     "@stylistic/object-curly-newline": [
       "error",
       {
-        ExportDeclaration: {
-          minProperties: 1,
-          multiline: true
-
-          // consistent: true
-        },
+        ExportDeclaration: "never",
         ImportDeclaration: {
           minProperties: 1,
-          multiline: true
+          multiline: true,
+          consistent: true
         },
         ObjectExpression: {
           minProperties: 1,
