@@ -23,6 +23,7 @@
     "eslint": "^10.0.3"
   },
   "dependencies": {
+    "@eslint/css": "^1.0.0",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^8.57.1",

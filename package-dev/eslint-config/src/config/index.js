@@ -10,3 +10,6 @@ export {
 export {
   default as vue
 } from "./vue.js";
+export {
+  default as css
+} from "./css.js";

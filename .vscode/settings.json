@@ -34,7 +34,6 @@
   "stylelint.enable": true,
   "stylelint.packageManager": "pnpm",
   "stylelint.validate": ["css", "less", "postcss", "vue"],
-  "stylelint.customSyntax": "postcss-html",
   "stylelint.snippet": ["css", "less", "postcss", "vue"],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {

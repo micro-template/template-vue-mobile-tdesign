@@ -7,6 +7,8 @@ const DEFAULT = [
   typescript,
   stylistic,
   ...vue
+
+  // css
 ];
 
 export default DEFAULT;
