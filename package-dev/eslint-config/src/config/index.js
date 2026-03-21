@@ -19,3 +19,9 @@ export {
 export {
   default as importX
 } from "./import-x.js";
+export {
+  default as ignores
+} from "./ignores.js";
+export {
+  default as command
+} from "./command.js";
