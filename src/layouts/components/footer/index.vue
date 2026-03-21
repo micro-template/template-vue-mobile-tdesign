@@ -6,15 +6,17 @@ import {
 import {
   ref,
   ComputedRef,
-  computed
+  computed,
+  watchEffect
 } from "vue";
 import router from "@/router";
 import {
   IFooterMeta,
   IRouteConfig
 } from "@/router/types";
-import type {
-  RouteRecordRaw
+import {
+  RouteRecordRaw,
+  useRoute
 } from "vue-router";
 import {
   filter,
@@ -61,10 +63,17 @@ const _footer: ComputedRef<IRouteConfig[]> = computed(() => filter(router.option
 }));
 
 const value = ref(_footer.value[0]?.path ?? "");
+
+const route = useRoute();
+
+watchEffect(() => {
+  value.value = route.path;
+});
 </script>
 
 <template>
-  <TabBar v-model="value"
+  <TabBar v-if="_footer.length"
+          v-model="value"
           theme="tag"
           :fixed="false"
           :split="false"
@@ -72,6 +81,7 @@ const value = ref(_footer.value[0]?.path ?? "");
     <TabBarItem v-for="item in _footer"
                 :key="item.path"
                 :value="item.path"
+                @click="() => router.replace(item.path)"
     >
       {{ item.meta?.footer?.value }}
       <template #icon>

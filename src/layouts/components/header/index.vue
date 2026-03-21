@@ -21,7 +21,7 @@ const route = useRoute();
 
 const meta: ComputedRef<IRouteConfig["meta"]> = computed(() => route.meta);
 
-const isTitleHidden = computed(() => !eq(get(meta.value, "hidden.title"), true));
+const isTitleHidden = computed(() => eq(get(meta.value, "hidden.title"), true));
 
 </script>
 <template>

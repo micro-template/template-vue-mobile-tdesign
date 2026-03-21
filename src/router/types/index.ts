@@ -18,13 +18,13 @@ export interface IRouteConfig {
   name: string;
   component: RouteComponent;
   meta?: {
-    title?: string | VNode;
+    title?: string | VNode | NavbarProps;
     hidden?: {
 
       /**
        * 是否隐藏标题栏，默认值为 false
        */
-      title?: boolean | NavbarProps;
+      title?: boolean;
 
       /**
        * 是否隐藏底部栏，默认值为 false
