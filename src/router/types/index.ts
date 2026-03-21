@@ -20,7 +20,15 @@ export interface IRouteConfig {
   meta?: {
     title?: string | VNode;
     hidden?: {
+
+      /**
+       * 是否隐藏标题栏，默认值为 false
+       */
       title?: boolean | NavbarProps;
+
+      /**
+       * 是否隐藏底部栏，默认值为 false
+       */
       footer?: boolean;
     };
     footer?: IFooterMeta;
