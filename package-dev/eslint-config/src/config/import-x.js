@@ -11,7 +11,7 @@ const configs = [
       "**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"
     ],
     plugins: {
-      "import-x": importX,
+      "import-x": importX
     },
     languageOptions: {
 
@@ -21,6 +21,7 @@ const configs = [
       parser: tsParser
     },
     rules: {
+
       // 防止重复 import
       "import-x/no-duplicates": "error",
 
@@ -53,19 +54,6 @@ const configs = [
             order: "asc",
             caseInsensitive: true
           }
-        }
-      ],
-
-      "import-x/extensions": [
-        "off",
-        "ignorePackages",
-        {
-          js: "always",
-          mjs: "always",
-          cjs: "always",
-          ts: "never",
-          tsx: "never",
-          jsx: "never"
         }
       ],
 
