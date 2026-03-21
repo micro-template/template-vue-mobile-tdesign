@@ -44,17 +44,19 @@ watchEffect(() => {
 const isHidden = computed(() => {
   const meta = route.meta as IRouteConfig["meta"];
 
-  const footer = meta?.footer;
+  const hasFooter = isNonEmptyPlainObject(meta?.footer);
 
-  if(isNonEmptyPlainObject(footer)) {
-    if(isBoolean(meta?.hidden?.footer)) {
-      return meta?.hidden?.footer;
+  const hiddenFlag = meta?.hidden?.footer;
+
+  if (hasFooter) {
+    if (isBoolean(hiddenFlag)) {
+      return hiddenFlag;
     }
 
     return true;
   }
 
-  return meta?.hidden?.footer ?? false;
+  return Boolean(hiddenFlag);
 });
 </script>
 

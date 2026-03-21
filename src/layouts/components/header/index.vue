@@ -26,7 +26,14 @@ const route = useRoute();
 
 const meta: ComputedRef<IRouteConfig["meta"]> = computed(() => route.meta);
 
-const isTitleHidden = computed(() => meta.value?.hidden?.title ?? true);
+const isTitleHidden = computed(() => {
+
+  if(!meta.value?.title) {
+    return false;
+  }
+
+  return meta.value?.hidden?.title ?? true;
+});
 
 const footer = useFooter();
 
