@@ -7,3 +7,4 @@ export { default as json } from "./json.js";
 export { default as importX } from "./import-x.js";
 export { default as ignores } from "./ignores.js";
 export { default as command } from "./command.js";
+export { default as custom } from "./custom.js";

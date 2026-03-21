@@ -1,7 +1,14 @@
 import {
   javascript,
   typescript,
-  stylistic, vue, css, json, importX, ignores, command
+  stylistic,
+  vue,
+  css,
+  json,
+  importX,
+  ignores,
+  command,
+  custom
 } from "./config/index.js";
 
 const DEFAULT = [
@@ -13,7 +20,8 @@ const DEFAULT = [
   ...json,
   ...importX,
   ignores,
-  command
+  command,
+  custom
 ];
 
 export default DEFAULT;
