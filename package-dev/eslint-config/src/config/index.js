@@ -13,3 +13,6 @@ export {
 export {
   default as css
 } from "./css.js";
+export {
+  default as json
+} from "./json.js";
