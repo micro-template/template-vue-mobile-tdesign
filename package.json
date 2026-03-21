@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "boot": "pnpm run clear && pnpm install",
+    "clear": "rm -fr node_modules && rm -fr .pnpm-store && pnpm --filter \"./package-**/**\" clear && pnpm --filter \"./package-**/\" clear",
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
