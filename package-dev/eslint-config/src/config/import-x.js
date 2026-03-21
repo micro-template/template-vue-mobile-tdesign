@@ -21,42 +21,16 @@ const configs = [
       parser: tsParser
     },
     rules: {
-      "import/newline-after-import": "error",
-      "import/no-duplicates": "error",
-      "import/no-mutable-exports": "error",
-      "import/no-named-default": "error",
-      "import/no-self-import": "error",
-      "import/no-unresolved": "off",
-      "import/no-webpack-loader-syntax": "error",
-      "import/namespace": "error",
-      "import/no-cycle": [
+      "import-x/order": [
         "error",
         {
-          ignoreExternal: false,
-          maxDepth: 4
-        }
-      ],
-      "import/no-useless-path-segments": 1,
-      "import/exports-last": 1,
-      "import/order": [
-        "error",
-        {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index"
-          ],
-          pathGroups: [
+          "pathGroups": [
             {
-              pattern: "@/**", // alias
-              group: "internal"
+              "pattern": "@/**",
+              "group": "external",
+              "position": "after"
             }
-          ],
-          pathGroupsExcludedImportTypes: [], // 否则厂内二方包和三方包之间不可加空行
-          "newlines-between": "always"
+          ]
         }
       ]
     }
