@@ -4,7 +4,7 @@ import pluginUnusedImports from "eslint-plugin-unused-imports";
 import pluginUnicorn from "eslint-plugin-unicorn";
 
 export default {
-  files: ["**/*.{js,mjs,cjs,vue}"],
+  files: ["**/*.{js,mjs,cjs,vue,ts}"],
   languageOptions: {
     globals: globals.browser
   },
