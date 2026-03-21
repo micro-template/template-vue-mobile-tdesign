@@ -4,8 +4,8 @@ import {
   stylistic,
   vue,
   css,
-  json,
   importX,
+  json,
   ignores,
   command,
   custom

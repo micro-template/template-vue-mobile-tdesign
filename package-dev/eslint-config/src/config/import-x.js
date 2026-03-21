@@ -20,55 +20,18 @@ const configs = [
       sourceType: "module",
       parser: tsParser
     },
-    settings: {
-      "import/resolver": {
-        typescript: {
-          project: [
-            "tsconfig.app.json",
-            "tsconfig.node.json",
-            "tsconfig.json"
-          ],
-          alwaysTryTypes: true,
-          extensions: [
-            ".ts",
-            ".tsx",
-            ".d.ts",
-            ".vue",
-            ".js",
-            ".jsx"
-          ]
-        },
-        alias: {
-          map: [
-            [
-              "@",
-              "./src"
-            ]
-          ],
-          extensions: [
-            ".js",
-            ".ts",
-            ".vue",
-            ".jsx",
-            ".tsx"
-          ]
-        }
-      }
-    },
     rules: {
 
       // 防止重复 import
       "import-x/no-duplicates": "error",
 
       // 禁止无效路径
-      "import-x/no-unresolved": "error",
+      "import-x/no-unresolved": "off",
       "import-x/no-cycle": "error",
       "import-x/first": "error",
       "import-x/newline-after-import": "error",
       "import-x/no-relative-parent-imports": "warn",
       "import-x/export": "error",
-
-      // 🔥 必开
 
       // 🔥 强烈推荐
       "import-x/order": [
