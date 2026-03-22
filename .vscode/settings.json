@@ -46,5 +46,5 @@
     "**/.husky/*": "shellscript",
     "commit-msg": "shellscript"
   },
-  "cSpell.words": ["ailearning"]
+  "cSpell.words": ["ailearning", "tdesign"]
 }

@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import {
-  Button,
-  Message
+  Button
 } from "tdesign-mobile-vue";
 
-const handleClick = () => {
-  Message.error({
-    content: "这是一个消息提示",
-    options: {
-      duration: 3000
-    }
+import {
+  MessageShow
+} from "../../src";
+
+const handleClick = (): void => {
+  MessageShow({
+    content: "这是一个消息提示"
   });
 };
 </script>
