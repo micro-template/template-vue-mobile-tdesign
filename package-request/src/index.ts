@@ -281,4 +281,6 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
   ));
 }
 
-export const request = createAxios();
+const request = createAxios();
+
+export default request;
