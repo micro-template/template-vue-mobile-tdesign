@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 
-// 测试用
 import {
   RouterView,
   useRouter
