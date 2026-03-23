@@ -1,7 +1,7 @@
 import js from "@eslint/js";
-import globals from "globals";
-import pluginUnusedImports from "eslint-plugin-unused-imports";
 import pluginUnicorn from "eslint-plugin-unicorn";
+import pluginUnusedImports from "eslint-plugin-unused-imports";
+import globals from "globals";
 
 export default {
   files: [
@@ -521,7 +521,6 @@ export default {
     "padded-blocks": [
       "error",
       {
-        classes: "never", // 禁止类定义内的空行
         switches: "never" // 禁止 switch 语句内的空行
       }
     ],

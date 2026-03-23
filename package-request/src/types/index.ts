@@ -16,16 +16,11 @@ export interface IRequestOptions {
 
   /**
    * 接口地址
-   *
-   * 例: http://www.baidu.com/api
    */
   apiUrl?: string;
 
   /**
    * 是否自动添加接口前缀
-   *
-   * 例: http://www.baidu.com/api
-   * urlPrefix: 'api'
    */
   isJoinPrefix?: boolean;
 

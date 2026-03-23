@@ -1,4 +1,4 @@
-// 通用请求头
+// 枚举
 export enum EContentTypeEnum {
   Json = "application/json;charset=UTF-8",
   // eslint-disable-next-line @typescript-eslint/naming-convention
