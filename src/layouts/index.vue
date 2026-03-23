@@ -18,11 +18,7 @@ const {
   routes
 } = router.options;
 
-const excludeRoutes = filter(routes, route => route.meta?.keepAlive === false);
-
 const includeRoutes = filter(routes, route => route.meta?.keepAlive === true || route.meta?.keepAlive === undefined);
-
-const excludeNames = map(excludeRoutes, route => route.name).filter(Boolean) as string[];
 
 const includeNames = map(includeRoutes, route => route.name).filter(Boolean) as string[];
 
@@ -35,9 +31,7 @@ const includeNames = map(includeRoutes, route => route.name).filter(Boolean) as 
     </header>
     <section>
       <RouterView v-slot="{ Component }">
-        <KeepAlive :exclude="excludeNames"
-                   :include="includeNames"
-        >
+        <KeepAlive :include="includeNames">
           <component :is="Component" />
         </KeepAlive>
       </RouterView>
