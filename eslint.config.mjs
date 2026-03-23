@@ -1,3 +1,3 @@
-import ESLint from "@ailearning/eslint-config";
+import ESLint from "@template/eslint-config";
 
 export default ESLint;

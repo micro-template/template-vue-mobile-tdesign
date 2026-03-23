@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clear": "rm -fr node_modules"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.30.3",
+  "imports": {
+    "#/*": "./src/*"
+  },
   "dependencies": {
     "axios": "^1.13.6",
     "lodash-es": "^4.17.23",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
+    "@types/qs": "^6.15.0",
     "typescript": "~5.9.3"
   }
 }
