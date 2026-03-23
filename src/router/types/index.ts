@@ -15,6 +15,10 @@ export interface IFooterMeta {
 
 export interface IRouteConfig {
   path: string;
+
+  /**
+   * 路由名称，必须唯一
+   */
   name: string;
   component: RouteComponent;
   meta?: {
@@ -32,5 +36,10 @@ export interface IRouteConfig {
       footer?: boolean;
     };
     footer?: IFooterMeta;
+
+    /**
+     * 是否启用 KeepAlive 缓存，默认值为 true
+     */
+    keepAlive?: boolean;
   };
 }
