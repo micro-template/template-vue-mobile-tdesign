@@ -116,3 +116,6 @@ export interface IResult<T = any> {
 export interface IAxiosRequestConfigRetry extends AxiosRequestConfig {
   retryCount?: number;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type TRecordable<T = any> = Record<string, T>;
