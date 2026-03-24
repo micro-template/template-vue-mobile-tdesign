@@ -9,7 +9,7 @@ import {
 
 const router = useRouter();
 
-const handleClick = () => {
+const handleClick = (): void => {
   router.push("/home/1/detail");
 };
 </script>
